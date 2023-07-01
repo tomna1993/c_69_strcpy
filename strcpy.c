@@ -51,8 +51,9 @@ int main(void)
 int string_copy(char *dest, char *src, int dest_size_in_bytes)
 {
     // If destination doesn't have enough space return failure
-    // If its value is one then we have to terminate the copy because there
-    // is no place for the terminator character (\0 - nul)
+    // If its value is zero then we have to terminate the copy because there
+    // is no place for any characters
+    // If its value is one then there is just one byte place for the terminator character (\0 - nul)
     if (dest_size_in_bytes <= 1)
     {
         return EXIT_FAILURE;
